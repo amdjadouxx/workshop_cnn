@@ -5,7 +5,7 @@ Ce repository contient l'ensemble des fichiers nécessaires pour participer à l
 ## Fichiers du projet
 
 ### Fichiers principaux
-- [main.py](main.py) - Script principal avec le code complet du workshop
+- [main.py](ex/main.py) - Script principal avec le code complet du workshop
 - [requirement.txt](requirement.txt) - Liste des dépendances nécessaires pour le projet
 
 ### Documentation
