@@ -30,7 +30,7 @@ Ce repository contient l'ensemble des fichiers nécessaires pour participer à l
 
 L'atelier est structuré en 6 exercices:
 
-1. **Introduction et Préparation des Données**: Chargement et préparation des données MNIST ASL
+1. **Introduction et Préparation des Données**: Chargement et préparation des données
 2. **Prétraitement des Données**: Techniques de prétraitement pour améliorer la qualité des données
 3. **Construction d'un Modèle CNN**: Création d'un réseau de neurones convolutif
 4. **Entraînement et Évaluation du Modèle**: Entraînement et mesure des performances
