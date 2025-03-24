@@ -1,5 +1,6 @@
 import tensorflow as tf
 from tensorflow.keras.preprocessing.image import ImageDataGenerator
+import data_preparation as dp
 
 # Exercice 2: Prétraitement des Données
 # Objectif: Apprendre à utiliser des techniques de prétraitement pour améliorer la qualité des données d'entrée.
@@ -31,3 +32,5 @@ def preprocess_data(X_train, y_train, X_test, y_test):
     # Créez le générateur de données de validation
 
     return train_generator  # À compléter avec le générateur de validation si nécessaire
+
+preprocess_data(dp.load_and_prepare_data())

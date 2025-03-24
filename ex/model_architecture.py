@@ -1,5 +1,6 @@
 import tensorflow as tf
 
+
 # Exercice 3: Construction d'un Modèle de Réseau de Neurones Convolutif (CNN)
 # Objectif: Construire et comprendre l'architecture d'un modèle CNN.
 

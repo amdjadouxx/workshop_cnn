@@ -1,5 +1,7 @@
 import tensorflow as tf
 from model_architecture import create_model
+from data_preprocess import preprocess
+from data_preparation import load_and_prepare_data
 
 # Exercice 4: Entraînement et Évaluation du Modèle
 # Objectif: Entraîner le modèle et évaluer ses performances.
