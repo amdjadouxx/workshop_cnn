@@ -1,4 +1,4 @@
-# Workshop d'Introduction à l'Intelligence Artificielle - MNIST ASL
+# Workshop d'Introduction aux CNN
 
 Ce repository contient l'ensemble des fichiers nécessaires pour participer à l'atelier d'introduction à l'intelligence artificielle utilisant le dataset MNIST de langue des signes américaine (ASL).
 
