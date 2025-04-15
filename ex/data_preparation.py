@@ -12,7 +12,6 @@ def load_and_prepare_data():
     y_test = []
 
     # Téléchargez le dataset en utilisant kagglehub
-    # Indice: Utilisez la fonction `kagglehub.dataset_download` pour obtenir le chemin du dataset.
     path = kagglehub.dataset_download("datamunge/sign-language-mnist")
 
     # Lisez les données d'entraînement
