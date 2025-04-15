@@ -1,6 +1,6 @@
 import numpy as np
 import kagglehub
-import csv  # Ajouté pour la lecture des fichiers CSV
+import csv
 
 # Exercice 1: Introduction et Préparation des Données
 # Objectif: Comprendre comment charger et préparer les données pour l'entraînement d'un modèle.
