@@ -31,8 +31,9 @@ def load_dataset():
 
 # Exercice 2: Prétraitement des Données
 def preprocess_data(y_train, y_test, num_classes=25):
-    y_train = tf.keras.utils.to_categorical(y_train, num_classes)
-    y_test = tf.keras.utils.to_categorical(y_test, num_classes)
+    # Convert to one-hot encoding
+    y_train_cat = tf.keras.utils.to_categorical(y_train, num_classes)
+    y_test_cat = tf.keras.utils.to_categorical(y_test, num_classes)
 
     train_datagen = ImageDataGenerator(
         rotation_range=10,
@@ -45,7 +46,7 @@ def preprocess_data(y_train, y_test, num_classes=25):
 
     test_datagen = ImageDataGenerator()
 
-    return train_datagen, test_datagen
+    return y_train_cat, y_test_cat, train_datagen, test_datagen
 
 # Exercice 3: Construction d'un Modèle de Réseau de Neurones Convolutif (CNN)
 def build_or_load_model(model_path, input_shape, num_classes):
@@ -116,9 +117,11 @@ def load_image(index, X_test, y_test, model, result_label, image_label):
 
 def main():
     X_train, y_train, X_test, y_test = load_dataset()
-    train_datagen, test_datagen = preprocess_data(y_train, y_test)
-    train_generator = train_datagen.flow(X_train, y_train, batch_size=32)
-    test_generator = test_datagen.flow(X_test, y_test, batch_size=32)
+    y_train_cat, y_test_cat, train_datagen, test_datagen = preprocess_data(y_train, y_test)
+    
+    # Use the categorical encoded labels in the generators
+    train_generator = train_datagen.flow(X_train, y_train_cat, batch_size=32)
+    test_generator = test_datagen.flow(X_test, y_test_cat, batch_size=32)
 
     model_path = 'asl_model.h5'
     model = build_or_load_model(model_path, input_shape=(28, 28, 1), num_classes=25)
@@ -145,7 +148,8 @@ def main():
         img_label = tk.Label(image_frame, image=img_tk)
         img_label.image = img_tk
         img_label.grid(row=i // 10, column=i % 10)
-        img_label.bind("Load", lambda event, index=i: load_image(index, X_test, y_test, model, result_label, image_label))
+        # Fix the binding to use left-click instead of "Load" string
+        img_label.bind("<Button-1>", lambda event, index=i: load_image(index, X_test, y_test_cat, model, result_label, image_label))
 
     root.mainloop()
 
